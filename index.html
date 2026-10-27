@@ -1,36 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Coding 101</title>
-  
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 100px;
-      background-color: #f4f4f9;
-    }
-
-    h1 {
-      font-size: 48px;
-      color: #333;
-    }
-
-    button {
-      font-size: 20px;
-      padding: 12px 24px;
-      cursor: pointer;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-    }
-
-    button:hover {
-      background-color: #000000;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -38,16 +11,7 @@
 
   <button onclick="changeName()">Click Me!</button>
 
-  <script>
-    function changeName() {
-      let greetingText = document.getElementById("greeting");
-      greetingText.textContent = "Hello Brody";
-
-      setTimeout(function() {
-        greetingText.textContent = "Hello World";
-      }, 2000);
-    }
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
