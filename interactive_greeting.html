@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Greeting</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 to-blue-100 min-h-screen flex items-center justify-center p-4">
+
+    <!-- Card Container -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center transform transition-all hover:scale-105 duration-300">
+        
+        <!-- Greeting Heading -->
+        <h1 id="greeting-text" class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 transition-all duration-200">
+            Hello World
+        </h1>
+        
+        <!-- Interactive Button -->
+        <button id="greet-btn" class="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer focus:outline-none focus:ring-4 focus:ring-indigo-300">
+            Change Greeting
+        </button>
+
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Keep track of timeout state to prevent overlapping timers if clicked multiple times rapidly
+        let timeoutId = null;
+        const heading = document.getElementById('greeting-text');
+        const button = document.getElementById('greet-btn');
+
+        button.addEventListener('click', () => {
+            // Change text to Hello Brody
+            heading.textContent = 'Hello Brody';
+
+            // Clear any existing active timeout
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+
+            // Revert back to Hello World after 2 seconds (2000 milliseconds)
+            timeoutId = setTimeout(() => {
+                heading.textContent = 'Hello World';
+            }, 2000);
+        });
+    </script>
+
+</body>
+</html>
